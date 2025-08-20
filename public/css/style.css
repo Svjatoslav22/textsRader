@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    /* padding: 20px; */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+.light {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.wrap {
+    /* max-width: 800px; */
+    width: 100%;
+    height: 100vh;
+    /* margin: 0 auto; */
+    /* padding: 20px; */
+    /* border-radius: 10px; */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark .wrap {
+    background-color: #2d2d2d;
+}
+
+.light .wrap {
+    background-color: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.nightMode {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.nightMode:hover {
+    transform: scale(1.1);
+}
+
+.speed-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.speed-label {
+    white-space: nowrap;
+}
+
+.speed {
+    flex-grow: 1;
+}
+
+.speedView {
+    min-width: 80px;
+    text-align: right;
+}
+
+.text-selection {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.text-selector {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.dark .text-selector {
+    background-color: #3d3d3d;
+    color: #fff;
+    border-color: #555;
+}
+
+.delete-btn {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.area {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    transition: all 0.3s;
+}
+
+.dark .area {
+    background-color: #3d3d3d;
+    color: #fff;
+    border-color: #555;
+}
+
+.area:focus {
+    outline: none;
+    border-color: #4d90fe;
+    box-shadow: 0 0 5px rgba(77, 144, 254, 0.5);
+}
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+}
+
+.dark .btn {
+    background-color: #4d4d4d;
+    color: #fff;
+}
+
+.light .btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.status-message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
+.status-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.place {
+    font-size: 32px;
+    text-align: center;
+    margin: 30px 0;
+    min-height: 60px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls {
+    display: none;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.control-btn {
+    flex: 0 1 auto;
+    min-width: 120px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes drag {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .speed-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+    }
+
+    .controls {
+        flex-wrap: wrap;
+    }
+}

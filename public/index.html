@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Reader - Швидке читання</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap dark" id="wrap">
+        <div class="header">
+            <h1> Швидке читання</h1>
+            <button class="nightMode" id="nightMode">🌙</button>
+        </div>
+        
+        <div class="speed-container">
+            <label for="speed" class="speed-label">Швидкість читання:</label>
+            <input type="range" id="speed" min="100" max="1500" step="50" value="500" class="speed">
+            <span id="speedView" class="speedView">500 слів/хв</span>
+        </div>
+        
+        <div class="text-selection">
+            <select id="textSelector" class="text-selector">
+                <option value="">Виберіть текст або додайте новий</option>
+            </select>
+            <button id="deleteText" class="btn delete-btn" title="Видалити текст">🗑️</button>
+        </div>
+        
+        <textarea id="area" class="area" placeholder="Напишіть або вставте свій текст тут..."></textarea>
+        
+        <div class="buttons-container">
+            <button class="btn primary-btn" id="add"> Почати читання</button>
+        </div>
+        
+        <div class="status-message" id="statusMessage"></div>
+        
+        <div class="place" id="place"></div>
+        
+        <div class="controls" id="controls">
+            <button class="btn control-btn" id="backBtn" title="Попереднє слово"> Назад</button>
+            <button class="btn control-btn" id="pauseBtn" title="Пауza/Продовжити"> Пауza</button>
+            <button class="btn control-btn" id="stopBtn" title="Зупинити"> Стоп</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
