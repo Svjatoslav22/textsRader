@@ -27,7 +27,8 @@ npm run dev
 npm start
 Відкрийте в браузері
 text
-http://localhost:3000
+fetch('http://localhost:3000/api/texts')
 
 dashboard:
-https://textsrader.onrender.com/
+
+fetch('https://textsrader.onrender.com/')
